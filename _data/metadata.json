@@ -1,0 +1,9 @@
+{
+  "title": "Your Name",
+  "url": "https://yourportfolio.com",
+  "description": "Personal portfolio and blog showcasing my work and thoughts",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  }
+}
