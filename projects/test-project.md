@@ -10,6 +10,5 @@ links:
 image: /images/projects/test.jpg
 featured: false
 date: 2024-03-21
-tags:
-  - projects
+
 --- 

@@ -29,50 +29,6 @@
         <p class="lead">A collection of my work and side projects</p>
     </div>
 </section>
-<!-- Debug information -->
-<div style="background: #f0f0f0; padding: 20px; margin: 20px;">
-    <h3>Debug Info:</h3>
-    <p>Number of projects: 6</p>
-<p><p>Projects found:</p>
-<ul></p>
-<p><li>
-Title: WeatherNow App<br>
-Client: self<br>
-Description: A weather application that provides real-time weather data, forecasts, and severe weather alerts using multiple weather APIs.<br>
-Image: /images/projects/weather.jpg
-</li></p>
-<p><li>
-Title: ShopSmart Platform<br>
-Client: client<br>
-Description: A scalable e-commerce platform built for a retail client. Features include inventory management, payment processing, and analytics dashboard.<br>
-Image: /images/projects/ecommerce.jpg
-</li></p>
-<p><li>
-Title: TaskFlow Pro<br>
-Client: self<br>
-Description: A full-stack task management application with real-time updates, team collaboration features, and customizable workflows.<br>
-Image: /images/projects/taskflow.jpg
-</li></p>
-<p><li>
-Title: Personal Portfolio<br>
-Client: self<br>
-Description: A modern portfolio website built with Eleventy.<br>
-Image: /images/projects/portfolio.jpg
-</li></p>
-<p><li>
-Title: Project Title<br>
-Client: self<br>
-Description: A brief description of the project that captures its key features and purpose.<br>
-Image: /images/projects/project-thumbnail.jpg
-</li></p>
-<p><li>
-Title: Test Project<br>
-Client: self<br>
-Description: This is a test project to verify collections are working.<br>
-Image: /images/projects/test.jpg
-</li></p>
-<p></ul></p>
-</div>
 <section class="projects-grid-section section">
     <div class="container">
         <div class="projects-filter">
@@ -80,8 +36,26 @@ Image: /images/projects/test.jpg
             <button class="filter-btn" data-filter="client">Client Work</button>
             <button class="filter-btn" data-filter="self">Personal Projects</button>
         </div>
-<p><div class="projects-grid">
-<!-- Show all featured client projects --></p>
+<p><div class="projects-grid"></p>
+<p><div class="project-card" data-type="self">
+<div class="project-card-header">
+<img src="/images/projects/weather.jpg" alt="WeatherNow App">
+<div class="project-type-badge">self</div>
+</div></p>
+<p><div class="project-card-content">
+<h2>WeatherNow App</h2></p>
+<p><div class="tech-stack"><span class="tech-badge">React Native</span><span class="tech-badge">Redux</span><span class="tech-badge">Weather API</span><span class="tech-badge">Node.js</span></div></p>
+<p><p class="project-description">A weather application that provides real-time weather data, forecasts, and severe weather alerts using multiple weather APIs.</p></p>
+<p><div class="project-links"></p>
+<p><a href="https://github.com/yourusername/weather-now" class="project-link github" target="_blank">
+View Code
+</a></p>
+<p><a href="https://weather-now-app.netlify.app" class="project-link demo" target="_blank">
+Live Demo
+</a></p>
+<p></div>
+</div>
+</div></p>
 <p><div class="project-card" data-type="client">
 <div class="project-card-header">
 <img src="/images/projects/ecommerce.jpg" alt="ShopSmart Platform">
@@ -95,17 +69,76 @@ Image: /images/projects/test.jpg
 <p></div>
 </div>
 </div></p>
-<p><!-- Show all client projects --></p>
-<p><div class="project-card" data-type="client">
+<p><div class="project-card" data-type="self">
 <div class="project-card-header">
-<img src="/images/projects/ecommerce.jpg" alt="ShopSmart Platform">
-<div class="project-type-badge">client</div>
+<img src="/images/projects/taskflow.jpg" alt="TaskFlow Pro">
+<div class="project-type-badge">self</div>
 </div></p>
 <p><div class="project-card-content">
-<h2>ShopSmart Platform</h2></p>
-<p><div class="tech-stack"><span class="tech-badge">Vue.js</span><span class="tech-badge">Python/Django</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">AWS</span><span class="tech-badge">Stripe API</span></div></p>
-<p><p class="project-description">A scalable e-commerce platform built for a retail client. Features include inventory management, payment processing, and analytics dashboard.</p></p>
+<h2>TaskFlow Pro</h2></p>
+<p><div class="tech-stack"><span class="tech-badge">React</span><span class="tech-badge">Node.js</span><span class="tech-badge">MongoDB</span><span class="tech-badge">Socket.io</span><span class="tech-badge">Express</span></div></p>
+<p><p class="project-description">A full-stack task management application with real-time updates, team collaboration features, and customizable workflows.</p></p>
 <p><div class="project-links"></p>
+<p><a href="https://github.com/yourusername/taskflow-pro" class="project-link github" target="_blank">
+View Code
+</a></p>
+<p><a href="https://taskflow-pro.herokuapp.com" class="project-link demo" target="_blank">
+Live Demo
+</a></p>
+<p></div>
+</div>
+</div></p>
+<p><div class="project-card" data-type="self">
+<div class="project-card-header">
+<img src="/images/projects/portfolio.jpg" alt="Personal Portfolio">
+<div class="project-type-badge">self</div>
+</div></p>
+<p><div class="project-card-content">
+<h2>Personal Portfolio</h2></p>
+<p><div class="tech-stack"><span class="tech-badge">HTML/CSS</span><span class="tech-badge">JavaScript</span><span class="tech-badge">Eleventy</span></div></p>
+<p><p class="project-description">A modern portfolio website built with Eleventy.</p></p>
+<p><div class="project-links"></p>
+<p><a href="https://github.com/yourusername/portfolio" class="project-link github" target="_blank">
+View Code
+</a></p>
+<p><a href="https://yourportfolio.com" class="project-link demo" target="_blank">
+Live Demo
+</a></p>
+<p></div>
+</div>
+</div></p>
+<p><div class="project-card" data-type="self">
+<div class="project-card-header">
+<img src="/images/projects/project-thumbnail.jpg" alt="Project Title">
+<div class="project-type-badge">self</div>
+</div></p>
+<p><div class="project-card-content">
+<h2>Project Title</h2></p>
+<p><div class="tech-stack"><span class="tech-badge">JavaScript</span><span class="tech-badge">React</span><span class="tech-badge">Node.js</span><span class="tech-badge">MongoDB</span></div></p>
+<p><p class="project-description">A brief description of the project that captures its key features and purpose.</p></p>
+<p><div class="project-links"></p>
+<p><a href="https://github.com/username/project" class="project-link github" target="_blank">
+View Code
+</a></p>
+<p><a href="https://demo-link.com" class="project-link demo" target="_blank">
+Live Demo
+</a></p>
+<p></div>
+</div>
+</div></p>
+<p><div class="project-card" data-type="self">
+<div class="project-card-header">
+<img src="/images/projects/test.jpg" alt="Test Project">
+<div class="project-type-badge">self</div>
+</div></p>
+<p><div class="project-card-content">
+<h2>Test Project</h2></p>
+<p><div class="tech-stack"><span class="tech-badge">Test</span><span class="tech-badge">Debug</span></div></p>
+<p><p class="project-description">This is a test project to verify collections are working.</p></p>
+<p><div class="project-links"></p>
+<p><a href="https://github.com/test" class="project-link github" target="_blank">
+View Code
+</a></p>
 <p></div>
 </div>
 </div></p>

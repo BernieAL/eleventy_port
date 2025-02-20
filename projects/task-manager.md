@@ -15,4 +15,6 @@ links:
 image: /images/projects/taskflow.jpg
 featured: true
 date: 2024-03-15
+tags:
+  - project
 --- 

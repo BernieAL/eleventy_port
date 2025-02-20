@@ -1,6 +1,8 @@
 ---
 title: Project Title
 client: self  # or "client"
+tags:
+  - project
 description: A brief description of the project that captures its key features and purpose.
 longDescription: >
   A more detailed description of the project that explains the problem solved,
@@ -17,4 +19,5 @@ links:
 image: /images/projects/project-thumbnail.jpg
 featured: true
 date: 2024-03-20
+
 --- 

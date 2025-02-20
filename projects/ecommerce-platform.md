@@ -16,4 +16,5 @@ links:
   case-study: /projects/shopsmart-platform
 image: /images/projects/ecommerce.jpg
 date: 2024-02-10
+
 --- 

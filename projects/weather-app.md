@@ -1,5 +1,7 @@
 ---
 title: WeatherNow App
+tags:
+  - project
 client: self
 description: A weather application that provides real-time weather data, forecasts, and severe weather alerts using multiple weather APIs.
 techStack:
@@ -13,4 +15,5 @@ links:
 image: /images/projects/weather.jpg
 featured: false
 date: 2024-01-15
+
 --- 
