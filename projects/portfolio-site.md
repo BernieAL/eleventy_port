@@ -1,10 +1,10 @@
 ---
-title: Personal Portfolio
-tags: 
+title: Portfolio Website
+tags:
   - project
-  - featured
-client: self
-description: A modern portfolio website built with Eleventy.
+  - personal
+description: A modern portfolio built with Eleventy and vanilla JavaScript
+image: /images/projects/portfolio.jpg
 techStack:
   - HTML/CSS
   - JavaScript
@@ -12,7 +12,6 @@ techStack:
 links:
   github: https://github.com/yourusername/portfolio
   demo: https://yourportfolio.com
-image: /images/projects/portfolio.jpg
 featured: true
 date: 2024-03-20
 

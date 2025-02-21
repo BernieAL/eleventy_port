@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -28,8 +28,19 @@
         <p>A collection of things I've built</p>
     </div>
 </section>
+<section class="page-intro">
+    <div class="page-intro-content">
+        <h2>My Work</h2>
+        <p>Here you'll find a selection of my projects, ranging from client work to personal experiments. Each project represents a unique challenge and solution, showcasing different aspects of my technical expertise and problem-solving abilities.</p>
+    </div>
+</section>
 <section class="projects-section">
-    <div class="projects-grid"><article class="project-card">
+    <div class="project-filters">
+        <button class="filter-button active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="client">Client</button>
+        <button class="filter-button" data-filter="personal">Personal</button>
+    </div>
+    <div class="projects-grid"><article class="project-card" data-type="client">
             <img src="/images/projects/ecommerce.jpg" alt="E-commerce Platform" class="card-image">
             <div class="card-content">
                 <h3>E-commerce Platform</h3>
@@ -37,7 +48,7 @@
                 <div class="tech-stack"><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Redis</span></div>
                 <div class="card-links"><a href="https://github.com/username/ecommerce" class="card-link">View Code →</a><a href="https://demo-ecommerce.com" class="card-link">Live Demo →</a></div>
             </div>
-        </article><article class="project-card">
+        </article><article class="project-card" data-type="client">
             <img src="/images/projects/test.jpg" alt="Test Project" class="card-image">
             <div class="card-content">
                 <h3>Test Project</h3>
@@ -45,7 +56,7 @@
                 <div class="tech-stack"><span class="tech-tag">Test</span><span class="tech-tag">Debug</span></div>
                 <div class="card-links"><a href="https://github.com/test" class="card-link">View Code →</a></div>
             </div>
-        </article><article class="project-card">
+        </article><article class="project-card" data-type="client">
             <img src="/images/projects/project-thumbnail.jpg" alt="Project Title" class="card-image">
             <div class="card-content">
                 <h3>Project Title</h3>
@@ -53,15 +64,15 @@
                 <div class="tech-stack"><span class="tech-tag">JavaScript</span><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span></div>
                 <div class="card-links"><a href="https://github.com/username/project" class="card-link">View Code →</a><a href="https://demo-link.com" class="card-link">Live Demo →</a></div>
             </div>
-        </article><article class="project-card">
-            <img src="/images/projects/portfolio.jpg" alt="Personal Portfolio" class="card-image">
+        </article><article class="project-card" data-type="personal">
+            <img src="/images/projects/portfolio.jpg" alt="Portfolio Website" class="card-image">
             <div class="card-content">
-                <h3>Personal Portfolio</h3>
-                <p>A modern portfolio website built with Eleventy.</p>
+                <h3>Portfolio Website</h3>
+                <p>A modern portfolio built with Eleventy and vanilla JavaScript</p>
                 <div class="tech-stack"><span class="tech-tag">HTML/CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Eleventy</span></div>
                 <div class="card-links"><a href="https://github.com/yourusername/portfolio" class="card-link">View Code →</a><a href="https://yourportfolio.com" class="card-link">Live Demo →</a></div>
             </div>
-        </article><article class="project-card">
+        </article><article class="project-card" data-type="client">
             <img src="/images/projects/taskflow.jpg" alt="TaskFlow Pro" class="card-image">
             <div class="card-content">
                 <h3>TaskFlow Pro</h3>
@@ -69,7 +80,7 @@
                 <div class="tech-stack"><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Socket.io</span><span class="tech-tag">Express</span></div>
                 <div class="card-links"><a href="https://github.com/yourusername/taskflow-pro" class="card-link">View Code →</a><a href="https://taskflow-pro.herokuapp.com" class="card-link">Live Demo →</a></div>
             </div>
-        </article><article class="project-card">
+        </article><article class="project-card" data-type="personal">
             <img src="/images/projects/weather.jpg" alt="WeatherNow App" class="card-image">
             <div class="card-content">
                 <h3>WeatherNow App</h3>
@@ -79,6 +90,30 @@
             </div>
         </article></div>
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const projects = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filter projects
+            const filter = button.dataset.filter;
+            projects.forEach(project => {
+                if (filter === 'all' || project.dataset.type === filter) {
+                    project.style.display = '';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
 
     </main>
 
@@ -87,6 +122,5 @@
             <p>&copy; Your Name 2025</p>
         </div>
     </footer>
-    <script src="/js/projects.js"></script>
 </body>
 </html>

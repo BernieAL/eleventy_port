@@ -1,12 +1,13 @@
 {
-  "title": "Your Name",
-  "url": "https://yourportfolio.com",
+  "title": "Your Site Name",
+  "url": "https://example.com",
   "description": "Full Stack Developer specializing in modern web technologies",
   "author": {
     "name": "Your Name",
     "tagline": "Full Stack Developer passionate about creating impactful web applications",
-    "email": "your.email@example.com",
+    "email": "you@example.com",
     "github": "https://github.com/yourusername",
-    "linkedin": "https://linkedin.com/in/yourusername"
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername"
   }
 }

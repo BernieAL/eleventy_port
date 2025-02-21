@@ -1,6 +1,8 @@
 ---
 title: Test Project
-client: self
+tags:
+  - project
+  - client
 description: This is a test project to verify collections are working.
 techStack:
   - Test

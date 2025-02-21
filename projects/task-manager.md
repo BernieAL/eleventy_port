@@ -1,6 +1,8 @@
 ---
 title: TaskFlow Pro
-client: self
+tags:
+  - project
+  - client
 description: A full-stack task management application with real-time updates, team collaboration features, and customizable workflows.
 techStack:
   - React
@@ -15,6 +17,5 @@ links:
 image: /images/projects/taskflow.jpg
 featured: true
 date: 2024-03-15
-tags:
-  - project
+
 --- 

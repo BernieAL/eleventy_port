@@ -10,10 +10,22 @@ permalink: /projects/
     </div>
 </section>
 
+<section class="page-intro">
+    <div class="page-intro-content">
+        <h2>My Work</h2>
+        <p>Here you'll find a selection of my projects, ranging from client work to personal experiments. Each project represents a unique challenge and solution, showcasing different aspects of my technical expertise and problem-solving abilities.</p>
+    </div>
+</section>
+
 <section class="projects-section">
+    <div class="project-filters">
+        <button class="filter-button active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="client">Client</button>
+        <button class="filter-button" data-filter="personal">Personal</button>
+    </div>
     <div class="projects-grid">
         {%- for project in collections.projects | reverse -%}
-        <article class="project-card">
+        <article class="project-card" data-type="{% if project.data.tags and 'client' in project.data.tags %}client{% else %}personal{% endif %}">
             <img src="{{ project.data.image }}" alt="{{ project.data.title }}" class="card-image">
             <div class="card-content">
                 <h3>{{ project.data.title }}</h3>
@@ -36,3 +48,28 @@ permalink: /projects/
         {%- endfor -%}
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const projects = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filter projects
+            const filter = button.dataset.filter;
+            projects.forEach(project => {
+                if (filter === 'all' || project.dataset.type === filter) {
+                    project.style.display = '';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>

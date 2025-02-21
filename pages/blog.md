@@ -10,6 +10,13 @@ permalink: /blog/
     </div>
 </section>
 
+<section class="page-intro">
+    <div class="page-intro-content">
+        <h2>Latest Articles</h2>
+        <p>I write about web development, design patterns, and lessons learned while building software. These articles share insights from my experiences and aim to help other developers in their journey.</p>
+    </div>
+</section>
+
 <section class="blog-section">
     <div class="blog-grid">
         {%- for post in collections.blog | reverse -%}

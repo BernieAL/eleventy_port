@@ -1,4 +1,11 @@
 const { DateTime } = require("luxon");
+const cheerio = require('cheerio');
+const markdownIt = require('markdown-it');
+const md = new markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+});
 
 module.exports = function(eleventyConfig) {
     // 1. Helper Functions
@@ -7,13 +14,43 @@ module.exports = function(eleventyConfig) {
     });
 
     // Add date filter
-    eleventyConfig.addFilter("dateToFormat", function(date, format) {
-        return DateTime.fromJSDate(date).toFormat(format);
+    eleventyConfig.addFilter("dateToFormat", function(date) {
+        return DateTime.fromJSDate(date).toFormat("MMMM d, yyyy");
     });
 
     // Add limit filter for recent posts
     eleventyConfig.addFilter("limit", function (arr, limit) {
         return arr.slice(0, limit);
+    });
+
+    // Add filter to extract headings from content
+    eleventyConfig.addFilter('getHeadings', function(content) {
+        // Convert markdown to HTML if content is a string
+        if (typeof content !== 'string') {
+            return [];
+        }
+
+        const html = md.render(content);
+        const $ = cheerio.load(html);
+        const headings = [];
+        
+        // Find all h2 and h3 headings
+        $('h2, h3').each((i, elem) => {
+            const $elem = $(elem);
+            const text = $elem.text().trim();
+            const id = text.toLowerCase().replace(/[^\w]+/g, '-');
+            
+            // Add ID to the heading element
+            $elem.attr('id', id);
+            
+            headings.push({
+                id: id,
+                text: text,
+                level: elem.name.slice(1)
+            });
+        });
+        
+        return headings;
     });
 
     // 2. Collections
@@ -32,12 +69,18 @@ module.exports = function(eleventyConfig) {
     // Get client projects
     eleventyConfig.addCollection("clientProjects", function(collectionApi) {
         return collectionApi.getFilteredByGlob("projects/*.md")
-            .filter(item => item.data.client === "client");
+            .filter(item => item.data.tags.includes("client"));
     });
 
     eleventyConfig.addCollection("featuredClientProjects", function(collectionApi) {
         return collectionApi.getFilteredByTags("project", "client", "featured")
             .sort((a, b) => b.date - a.date);
+    });
+
+    // Get personal projects
+    eleventyConfig.addCollection("personalProjects", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("projects/*.md")
+            .filter(item => item.data.tags.includes("personal"));
     });
 
     // Blog collections
@@ -66,10 +109,10 @@ module.exports = function(eleventyConfig) {
     // 4. Directory Configuration
     return {
         dir: {
-            input: ".",              // Root directory for source files
-            includes: "_includes",    // Where layouts/partials live
-            output: "_site",         // Where the built site goes
-            data: "_data"            // Global data files
+            input: ".",
+            output: "_site",
+            includes: "_includes",  // This is where all templates live
+            data: "_data"
         },
         // 5. Template Engine Settings
         templateFormats: ["md", "njk", "html"],
