@@ -3,10 +3,38 @@ layout: base.njk
 title: Blog
 permalink: /blog/
 ---
-<section class="blog-header section">
-    <div class="container">
+<section class="hero">
+    <div class="hero-content">
         <h1>Blog</h1>
-        <p class="lead">Thoughts and tutorials on web development</p>
+        <p>Thoughts and tutorials on web development</p>
+    </div>
+</section>
+
+<section class="blog-section">
+    <div class="blog-grid">
+        {%- for post in collections.blog | reverse -%}
+        <article class="blog-card">
+            <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" class="card-image">
+            <div class="card-content">
+                <div class="post-meta">
+                    <time>{{ post.date | dateToFormat("MMMM d, yyyy") }}</time>
+                    <div class="post-tags">
+                        {%- for tag in post.data.tags -%}
+                        <span class="tech-tag">{{ tag }}</span>
+                        {%- endfor -%}
+                    </div>
+                </div>
+                <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                <p>{{ post.data.description }}</p>
+                <div class="card-links">
+                    <a href="{{ post.url }}" class="card-link">Read Article →</a>
+                    {%- if post.data.links.github -%}
+                    <a href="{{ post.data.links.github }}" class="card-link">View Code →</a>
+                    {%- endif -%}
+                </div>
+            </div>
+        </article>
+        {%- endfor -%}
     </div>
 </section>
 
@@ -30,37 +58,3 @@ permalink: /blog/
         <p>No blog posts found</p>
     {% endif %}
 </div>
-
-<section class="blog-grid-section">
-    <div class="blog-grid">
-        {% for post in collections.blog | reverse %}
-        <article class="blog-card">
-            <div class="post-meta">
-                <time>{{ post.date | dateToFormat("MMMM d, yyyy") }}</time>
-                <div class="post-tags">
-                    {% for tag in post.data.tags %}
-                    <span class="tag-badge">{{ tag }}</span>
-                    {% endfor %}
-                </div>
-            </div>
-            
-            <h2>
-                <a href="{{ post.url }}">{{ post.data.title }}</a>
-            </h2>
-            
-            <p class="post-description">{{ post.data.description }}</p>
-            
-            <div class="post-links">
-                <a href="{{ post.url }}" class="read-more">
-                    Read Article →
-                </a>
-                {% if post.data.links.github %}
-                <a href="{{ post.data.links.github }}" class="post-link github" target="_blank">
-                    View Code
-                </a>
-                {% endif %}
-            </div>
-        </article>
-        {% endfor %}
-    </div>
-</section>

@@ -11,10 +11,9 @@
 </head>
 <body>
     <nav>
-        <div class="container">
+        <div class="nav-container">
             <a href="/" class="logo">Your Name</a>
             <div class="nav-links">
-                <a href="/">Home</a>
                 <a href="/projects">Projects</a>
                 <a href="/blog">Blog</a>
                 <a href="/about">About</a>
@@ -23,127 +22,62 @@
     </nav>
 
     <main>
-        <section class="projects-header section">
-    <div class="container">
-        <h1>My Projects</h1>
-        <p class="lead">A collection of my work and side projects</p>
+        <section class="hero">
+    <div class="hero-content">
+        <h1>Projects</h1>
+        <p>A collection of things I've built</p>
     </div>
 </section>
-<section class="projects-grid-section section">
-    <div class="container">
-        <div class="projects-filter">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="client">Client Work</button>
-            <button class="filter-btn" data-filter="self">Personal Projects</button>
-        </div>
-<p><div class="projects-grid"></p>
-<p><div class="project-card" data-type="self">
-<div class="project-card-header">
-<img src="/images/projects/weather.jpg" alt="WeatherNow App">
-<div class="project-type-badge">self</div>
-</div></p>
-<p><div class="project-card-content">
-<h2>WeatherNow App</h2></p>
-<p><div class="tech-stack"><span class="tech-badge">React Native</span><span class="tech-badge">Redux</span><span class="tech-badge">Weather API</span><span class="tech-badge">Node.js</span></div></p>
-<p><p class="project-description">A weather application that provides real-time weather data, forecasts, and severe weather alerts using multiple weather APIs.</p></p>
-<p><div class="project-links"></p>
-<p><a href="https://github.com/yourusername/weather-now" class="project-link github" target="_blank">
-View Code
-</a></p>
-<p><a href="https://weather-now-app.netlify.app" class="project-link demo" target="_blank">
-Live Demo
-</a></p>
-<p></div>
-</div>
-</div></p>
-<p><div class="project-card" data-type="client">
-<div class="project-card-header">
-<img src="/images/projects/ecommerce.jpg" alt="ShopSmart Platform">
-<div class="project-type-badge">client</div>
-</div></p>
-<p><div class="project-card-content">
-<h2>ShopSmart Platform</h2></p>
-<p><div class="tech-stack"><span class="tech-badge">Vue.js</span><span class="tech-badge">Python/Django</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">AWS</span><span class="tech-badge">Stripe API</span></div></p>
-<p><p class="project-description">A scalable e-commerce platform built for a retail client. Features include inventory management, payment processing, and analytics dashboard.</p></p>
-<p><div class="project-links"></p>
-<p></div>
-</div>
-</div></p>
-<p><div class="project-card" data-type="self">
-<div class="project-card-header">
-<img src="/images/projects/taskflow.jpg" alt="TaskFlow Pro">
-<div class="project-type-badge">self</div>
-</div></p>
-<p><div class="project-card-content">
-<h2>TaskFlow Pro</h2></p>
-<p><div class="tech-stack"><span class="tech-badge">React</span><span class="tech-badge">Node.js</span><span class="tech-badge">MongoDB</span><span class="tech-badge">Socket.io</span><span class="tech-badge">Express</span></div></p>
-<p><p class="project-description">A full-stack task management application with real-time updates, team collaboration features, and customizable workflows.</p></p>
-<p><div class="project-links"></p>
-<p><a href="https://github.com/yourusername/taskflow-pro" class="project-link github" target="_blank">
-View Code
-</a></p>
-<p><a href="https://taskflow-pro.herokuapp.com" class="project-link demo" target="_blank">
-Live Demo
-</a></p>
-<p></div>
-</div>
-</div></p>
-<p><div class="project-card" data-type="self">
-<div class="project-card-header">
-<img src="/images/projects/portfolio.jpg" alt="Personal Portfolio">
-<div class="project-type-badge">self</div>
-</div></p>
-<p><div class="project-card-content">
-<h2>Personal Portfolio</h2></p>
-<p><div class="tech-stack"><span class="tech-badge">HTML/CSS</span><span class="tech-badge">JavaScript</span><span class="tech-badge">Eleventy</span></div></p>
-<p><p class="project-description">A modern portfolio website built with Eleventy.</p></p>
-<p><div class="project-links"></p>
-<p><a href="https://github.com/yourusername/portfolio" class="project-link github" target="_blank">
-View Code
-</a></p>
-<p><a href="https://yourportfolio.com" class="project-link demo" target="_blank">
-Live Demo
-</a></p>
-<p></div>
-</div>
-</div></p>
-<p><div class="project-card" data-type="self">
-<div class="project-card-header">
-<img src="/images/projects/project-thumbnail.jpg" alt="Project Title">
-<div class="project-type-badge">self</div>
-</div></p>
-<p><div class="project-card-content">
-<h2>Project Title</h2></p>
-<p><div class="tech-stack"><span class="tech-badge">JavaScript</span><span class="tech-badge">React</span><span class="tech-badge">Node.js</span><span class="tech-badge">MongoDB</span></div></p>
-<p><p class="project-description">A brief description of the project that captures its key features and purpose.</p></p>
-<p><div class="project-links"></p>
-<p><a href="https://github.com/username/project" class="project-link github" target="_blank">
-View Code
-</a></p>
-<p><a href="https://demo-link.com" class="project-link demo" target="_blank">
-Live Demo
-</a></p>
-<p></div>
-</div>
-</div></p>
-<p><div class="project-card" data-type="self">
-<div class="project-card-header">
-<img src="/images/projects/test.jpg" alt="Test Project">
-<div class="project-type-badge">self</div>
-</div></p>
-<p><div class="project-card-content">
-<h2>Test Project</h2></p>
-<p><div class="tech-stack"><span class="tech-badge">Test</span><span class="tech-badge">Debug</span></div></p>
-<p><p class="project-description">This is a test project to verify collections are working.</p></p>
-<p><div class="project-links"></p>
-<p><a href="https://github.com/test" class="project-link github" target="_blank">
-View Code
-</a></p>
-<p></div>
-</div>
-</div></p>
-<p></div>
-</div></p>
+<section class="projects-section">
+    <div class="projects-grid"><article class="project-card">
+            <img src="/images/projects/ecommerce.jpg" alt="E-commerce Platform" class="card-image">
+            <div class="card-content">
+                <h3>E-commerce Platform</h3>
+                <p>A full-featured e-commerce solution with modern architecture</p>
+                <div class="tech-stack"><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Redis</span></div>
+                <div class="card-links"><a href="https://github.com/username/ecommerce" class="card-link">View Code →</a><a href="https://demo-ecommerce.com" class="card-link">Live Demo →</a></div>
+            </div>
+        </article><article class="project-card">
+            <img src="/images/projects/test.jpg" alt="Test Project" class="card-image">
+            <div class="card-content">
+                <h3>Test Project</h3>
+                <p>This is a test project to verify collections are working.</p>
+                <div class="tech-stack"><span class="tech-tag">Test</span><span class="tech-tag">Debug</span></div>
+                <div class="card-links"><a href="https://github.com/test" class="card-link">View Code →</a></div>
+            </div>
+        </article><article class="project-card">
+            <img src="/images/projects/project-thumbnail.jpg" alt="Project Title" class="card-image">
+            <div class="card-content">
+                <h3>Project Title</h3>
+                <p>A brief description of the project that captures its key features and purpose.</p>
+                <div class="tech-stack"><span class="tech-tag">JavaScript</span><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span></div>
+                <div class="card-links"><a href="https://github.com/username/project" class="card-link">View Code →</a><a href="https://demo-link.com" class="card-link">Live Demo →</a></div>
+            </div>
+        </article><article class="project-card">
+            <img src="/images/projects/portfolio.jpg" alt="Personal Portfolio" class="card-image">
+            <div class="card-content">
+                <h3>Personal Portfolio</h3>
+                <p>A modern portfolio website built with Eleventy.</p>
+                <div class="tech-stack"><span class="tech-tag">HTML/CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Eleventy</span></div>
+                <div class="card-links"><a href="https://github.com/yourusername/portfolio" class="card-link">View Code →</a><a href="https://yourportfolio.com" class="card-link">Live Demo →</a></div>
+            </div>
+        </article><article class="project-card">
+            <img src="/images/projects/taskflow.jpg" alt="TaskFlow Pro" class="card-image">
+            <div class="card-content">
+                <h3>TaskFlow Pro</h3>
+                <p>A full-stack task management application with real-time updates, team collaboration features, and customizable workflows.</p>
+                <div class="tech-stack"><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Socket.io</span><span class="tech-tag">Express</span></div>
+                <div class="card-links"><a href="https://github.com/yourusername/taskflow-pro" class="card-link">View Code →</a><a href="https://taskflow-pro.herokuapp.com" class="card-link">Live Demo →</a></div>
+            </div>
+        </article><article class="project-card">
+            <img src="/images/projects/weather.jpg" alt="WeatherNow App" class="card-image">
+            <div class="card-content">
+                <h3>WeatherNow App</h3>
+                <p>A weather application that provides real-time weather data, forecasts, and severe weather alerts using multiple weather APIs.</p>
+                <div class="tech-stack"><span class="tech-tag">React Native</span><span class="tech-tag">Redux</span><span class="tech-tag">Weather API</span><span class="tech-tag">Node.js</span></div>
+                <div class="card-links"><a href="https://github.com/yourusername/weather-now" class="card-link">View Code →</a><a href="https://weather-now-app.netlify.app" class="card-link">Live Demo →</a></div>
+            </div>
+        </article></div>
 </section>
 
     </main>

@@ -1,20 +1,13 @@
 ---
-title: ShopSmart Platform
-tags:
-  - project
-  - client
-  - featured
-client: client
-description: A scalable e-commerce platform built for a retail client. Features include inventory management, payment processing, and analytics dashboard.
-techStack:
-  - Vue.js
-  - Python/Django
-  - PostgreSQL
-  - AWS
-  - Stripe API
-links:
-  case-study: /projects/shopsmart-platform
+title: E-commerce Platform
+description: A full-featured e-commerce solution with modern architecture
 image: /images/projects/ecommerce.jpg
-date: 2024-02-10
-
+techStack:
+  - React
+  - Node.js
+  - PostgreSQL
+  - Redis
+links:
+  github: https://github.com/username/ecommerce
+  demo: https://demo-ecommerce.com
 --- 

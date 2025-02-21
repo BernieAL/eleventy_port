@@ -3,62 +3,36 @@ layout: base.njk
 title: Projects
 permalink: /projects/
 ---
-<section class="projects-header section">
-    <div class="container">
-        <h1>My Projects</h1>
-        <p class="lead">A collection of my work and side projects</p>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Projects</h1>
+        <p>A collection of things I've built</p>
     </div>
 </section>
 
-<section class="projects-grid-section section">
-    <div class="container">
-        <div class="projects-filter">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="client">Client Work</button>
-            <button class="filter-btn" data-filter="self">Personal Projects</button>
-        </div>
-
-        <div class="projects-grid">
-            {% for project in collections.projects %}
-                <div class="project-card" data-type="{{ project.data.client }}">
-                    <div class="project-card-header">
-                        <img src="{{ project.data.image }}" alt="{{ project.data.title }}">
-                        <div class="project-type-badge">{{ project.data.client }}</div>
-                    </div>
-                    
-                    <div class="project-card-content">
-                        <h2>{{ project.data.title }}</h2>
-                        
-                        <div class="tech-stack">
-                            {%- for tech in project.data.techStack -%}
-                            <span class="tech-badge">{{ tech }}</span>
-                            {%- endfor -%}
-                        </div>
-                        
-                        <p class="project-description">{{ project.data.description }}</p>
-                        
-                        <div class="project-links">
-                            {% if project.data.links.github %}
-                            <a href="{{ project.data.links.github }}" class="project-link github" target="_blank">
-                                View Code
-                            </a>
-                            {% endif %}
-                            
-                            {% if project.data.links.demo %}
-                            <a href="{{ project.data.links.demo }}" class="project-link demo" target="_blank">
-                                Live Demo
-                            </a>
-                            {% endif %}
-                            
-                            {% if project.data.links.case-study %}
-                            <a href="{{ project.data.links.case-study }}" class="project-link case-study">
-                                Read Case Study
-                            </a>
-                            {% endif %}
-                        </div>
-                    </div>
+<section class="projects-section">
+    <div class="projects-grid">
+        {%- for project in collections.projects | reverse -%}
+        <article class="project-card">
+            <img src="{{ project.data.image }}" alt="{{ project.data.title }}" class="card-image">
+            <div class="card-content">
+                <h3>{{ project.data.title }}</h3>
+                <p>{{ project.data.description }}</p>
+                <div class="tech-stack">
+                    {%- for tech in project.data.techStack -%}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {%- endfor -%}
                 </div>
-            {% endfor %}
-        </div>
+                <div class="card-links">
+                    {%- if project.data.links.github -%}
+                    <a href="{{ project.data.links.github }}" class="card-link">View Code →</a>
+                    {%- endif -%}
+                    {%- if project.data.links.demo -%}
+                    <a href="{{ project.data.links.demo }}" class="card-link">Live Demo →</a>
+                    {%- endif -%}
+                </div>
+            </div>
+        </article>
+        {%- endfor -%}
     </div>
 </section>

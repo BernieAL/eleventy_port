@@ -11,10 +11,9 @@
 </head>
 <body>
     <nav>
-        <div class="container">
+        <div class="nav-container">
             <a href="/" class="logo">Your Name</a>
             <div class="nav-links">
-                <a href="/">Home</a>
                 <a href="/projects">Projects</a>
                 <a href="/blog">Blog</a>
                 <a href="/about">About</a>
@@ -24,53 +23,39 @@
 
     <main>
         <section class="hero">
-    <div class="container">
+    <div class="hero-content">
         <h1>Hi, I'm Your Name</h1>
         <p>Full Stack Developer passionate about creating impactful web applications</p>
-        <div class="hero-cta">
-            <a href="/projects" class="cta-button">View My Work</a>
-            <a href="/about" class="cta-button secondary">About Me</a>
-        </div>
+        <a href="/projects" class="cta-button">View My Work</a>
     </div>
 </section>
-<section class="section featured-projects">
-    <div class="container">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid"><div class="project-card">
-                <img src="/images/projects/portfolio.jpg" alt="Personal Portfolio">
-                <div class="project-card-content">
-                    <div class="project-tags"></div>
-                    <h3>Personal Portfolio</h3>
-                    <p>A modern portfolio website built with Eleventy.</p>
-                    <div class="project-links">
-                        <a href="" class="github-link">View Code</a>
-                        <a href="" class="demo-link">Live Demo</a>
-                    </div>
-                </div>
-            </div><div class="project-card">
-                <img src="/images/projects/project-thumbnail.jpg" alt="Project Title">
-                <div class="project-card-content">
-                    <div class="project-tags"></div>
-                    <h3>Project Title</h3>
-                    <p>A brief description of the project that captures its key features and purpose.</p>
-                    <div class="project-links">
-                        <a href="" class="github-link">View Code</a>
-                        <a href="" class="demo-link">Live Demo</a>
-                    </div>
-                </div>
-            </div><div class="project-card">
-                <img src="/images/projects/taskflow.jpg" alt="TaskFlow Pro">
-                <div class="project-card-content">
-                    <div class="project-tags"></div>
-                    <h3>TaskFlow Pro</h3>
-                    <p>A full-stack task management application with real-time updates, team collaboration features, and customizable workflows.</p>
-                    <div class="project-links">
-                        <a href="" class="github-link">View Code</a>
-                        <a href="" class="demo-link">Live Demo</a>
-                    </div>
-                </div>
-            </div></div>
-    </div>
+<section class="featured-projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid"><article class="project-card">
+            <img src="/images/projects/portfolio.jpg" alt="Personal Portfolio" class="card-image">
+            <div class="card-content">
+                <h3>Personal Portfolio</h3>
+                <p>A modern portfolio website built with Eleventy.</p>
+                <div class="tech-stack"><span class="tech-tag">HTML/CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Eleventy</span></div>
+                <div class="card-links"><a href="https://github.com/yourusername/portfolio" class="card-link">View Code →</a><a href="https://yourportfolio.com" class="card-link">Live Demo →</a></div>
+            </div>
+        </article><article class="project-card">
+            <img src="/images/projects/project-thumbnail.jpg" alt="Project Title" class="card-image">
+            <div class="card-content">
+                <h3>Project Title</h3>
+                <p>A brief description of the project that captures its key features and purpose.</p>
+                <div class="tech-stack"><span class="tech-tag">JavaScript</span><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span></div>
+                <div class="card-links"><a href="https://github.com/username/project" class="card-link">View Code →</a><a href="https://demo-link.com" class="card-link">Live Demo →</a></div>
+            </div>
+        </article><article class="project-card">
+            <img src="/images/projects/taskflow.jpg" alt="TaskFlow Pro" class="card-image">
+            <div class="card-content">
+                <h3>TaskFlow Pro</h3>
+                <p>A full-stack task management application with real-time updates, team collaboration features, and customizable workflows.</p>
+                <div class="tech-stack"><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Socket.io</span><span class="tech-tag">Express</span></div>
+                <div class="card-links"><a href="https://github.com/yourusername/taskflow-pro" class="card-link">View Code →</a><a href="https://taskflow-pro.herokuapp.com" class="card-link">Live Demo →</a></div>
+            </div>
+        </article></div>
 </section>
 
     </main>
