@@ -2,31 +2,34 @@
 layout: base.njk
 ---
 <article class="blog-post">
-    <div class="post-header">
+    <header class="post-header">
         <div class="post-meta">
             <time>{{ page.date | dateToFormat("MMMM d, yyyy") }}</time>
-            <div class="post-tags">
-                {%- for tag in tags -%}
-                <span class="tech-tag">{{ tag }}</span>
-                {%- endfor -%}
-            </div>
+            <span class="read-time">{{ readingTime }} min read</span>
         </div>
         <h1>{{ title }}</h1>
         <p class="post-description">{{ description }}</p>
-    </div>
+        <div class="author-info">
+            <img src="{{ author.avatar }}" alt="{{ author.name }}" class="author-avatar">
+            <div class="author-details">
+                <span>By</span>
+                <a href="/authors/{{ author.slug }}" class="author-name">{{ author.name }}</a>
+            </div>
+        </div>
+    </header>
 
     <div class="post-container">
-        <div class="post-content">
+        <article class="post-content">
             {{ content | safe }}
-        </div>
+        </article>
         
-        {% set headings = content | getHeadings %}
-        {% if headings.length > 0 %}
         <aside class="table-of-contents">
             <div class="toc-container">
-                <h2>Table of Contents</h2>
+                <div class="toc-header">
+                    <h2>Table of Contents</h2>
+                </div>
                 <nav class="toc-nav">
-                    {%- for heading in headings -%}
+                    {%- for heading in content | getHeadings -%}
                     <a href="#{{ heading.id }}" class="toc-link toc-level-{{ heading.level }}">
                         {{ heading.text }}
                     </a>
@@ -34,6 +37,44 @@ layout: base.njk
                 </nav>
             </div>
         </aside>
-        {% endif %}
     </div>
-</article> 
+</article>
+
+<script>
+// Add smooth scrolling and active state for TOC links
+document.addEventListener('DOMContentLoaded', () => {
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = document.querySelectorAll('h2, h3');
+    
+    // Smooth scroll to section
+    tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Update active state on scroll
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - 100) {
+                current = '#' + section.getAttribute('id');
+            }
+        });
+
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script> 
